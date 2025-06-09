@@ -1,6 +1,4 @@
-/* ─────────────────────────────────────
-   GLOBAL + CENTRING
-────────────────────────────────────── */
+
 body{
   background-color: rgb(137, 168, 178);
   color: black;
@@ -23,7 +21,7 @@ div{
 }
 
 /* ─────────────────────────────────────
- OUTER & INNER CARDS
+         OUTER & INNER CARDS
 ────────────────────────────────────── */
 .outside{
   background-color: rgb(179, 200, 207);
@@ -43,7 +41,7 @@ div{
 }
 
 /* ─────────────────────────────────────
- FORM CONTROLS
+             FORM CONTROLS
 ────────────────────────────────────── */
 input{
   margin-bottom: 10px;
@@ -71,7 +69,7 @@ button:active{
 }
 
 /* ─────────────────────────────────────
- LOG CONTAINER (grey card)
+     LOG CONTAINER (grey card)
 ────────────────────────────────────── */
 .log{
   margin-top: 20px;           /* visible gap between borders */
@@ -93,7 +91,7 @@ button:active{
 }
 
 /* ─────────────────────────────────────
- SMALL‑PHONE TWEAKS
+     SMALL‑PHONE RESPONSIVENESS 
 ────────────────────────────────────── */
 @media screen and (max-width: 480px){
   .outside,
