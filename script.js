@@ -1,10 +1,25 @@
 //everything that needs its value taken from the screen will be an id such as the span, button, input, and a log.
 
-let jobCounter =0;
+let jobCounter = 0;
 const counterElement = document.getElementById("jobCounter"); //counter display
-const incrementButton=document.getElementById("incrementButton"); //to get value of the button and increments on each click
+const incrementButton = document.getElementById("incrementButton"); //to get value of the button and increments on each click
 const companyInput = document.getElementById("companyInput") //Company applied to
 const applicationLog = document.getElementById("applicationLog") //creating a container log of all the applications applied to in that day
+
+//function to increament the counter if the enter key is pressed
+companyInput.addEventListener('keydown', event => {
+
+  //submit when the user presses the enter key
+  if(event.key == "Enter")
+  {
+    //Cancel the default form action
+    event.preventDefault();
+
+    //Trigger the button element 
+    incrementCounter();
+
+  }
+}); 
 
 //function to increment the counter value
 function incrementCounter(){
