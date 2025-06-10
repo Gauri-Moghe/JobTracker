@@ -19,9 +19,9 @@ No login, database, or backend required — everything is handled in the fronten
 
 ```
 JobTracker/
-├── index.html       # Main webpage
-├── styles.css       # Styling
-└── script.js        # Core logic
+├── index.html       
+├── styles.css       
+└── script.js        
 ```
 
 
