@@ -6,8 +6,10 @@ const incrementButton = document.getElementById("incrementButton"); //to get val
 const companyInput = document.getElementById("companyInput") //Company applied to
 const applicationLog = document.getElementById("applicationLog") //creating a container log of all the applications applied to in that day
 
+
+
 //function to increament the counter if the enter key is pressed
-companyInput.addEventListener('keydown', event => {
+companyInput.addEventListener('keypress', event => {
 
   //submit when the user presses the enter key
   if(event.key == "Enter")
@@ -19,25 +21,56 @@ companyInput.addEventListener('keydown', event => {
     incrementCounter();
 
   }
+
 }); 
 
+//Adding a log row 
+function addLogItem(company)
+{
+  //creating a log 
+  const logItem = document.createElement('div'); //create a new div element
+  logItem.className = 'log-item'; //Assigning it to the class log-item for styling
+
+  const text = document.createElement('span');
+  text.textContent = `Applied to: ${company}`; //Printing out the company being applied to
+
+  //creating a delete button 
+  const delBtn = document.createElement('button');
+  delBtn.textContent= '❌';
+  delBtn.className = 'delete-btn';
+  delBtn.onclick = () => removeLogItem(logItem);
+
+  logItem.append(text, delBtn); //Make a log with the company name and the delete button
+  applicationLog.appendChild(logItem); //Append it to the log container
+
+}
+
+//function to remove the log row
+function removeLogItem(item){
+  applicationLog.removeChild(item);
+  jobCounter--;
+  counterElement.textContent = jobCounter; 
+
+}
+
+
 //function to increment the counter value
-function incrementCounter(){
+function incrementCounter()
+{
   //remove any white spaces from the company name
   const companyName = companyInput.value.trim();
   
   //if an input is given then increment the counter
-  if(companyName){
+  if(companyName)
+  {
     jobCounter++;
     counterElement.textContent= jobCounter; //To get the text content and display it
-    //Creating a lob
-    const logItem = document.createElement('div'); //create a new div element
-    logItem.className = 'log-item'; //Assigning it to the class log-item for styling
-    logItem.textContent = `Applied to: ${companyName}`; //Printing out the company being applied to
-    applicationLog.appendChild(logItem); //Append it to the log container
+
+    addLogItem(companyName);
     companyInput.value =''; //clear the input field for the next entry
   }
-  else{
+  else
+  {
     alert('Please enter the name of the company you applied to!!');
   }
   

@@ -59,17 +59,17 @@ button{
 }
 
 button:hover:enabled{
-  background-color: gray;
+  background-color: #deecdd;
 }
 
-button:active{
-  background-color: green;
+button:active:enabled{
+  background-color: #b4d3b2;
   box-shadow: 0 5px #6a6a6a;
   transform: translateY(4px);
 }
 
 /* ─────────────────────────────────────
-     LOG CONTAINER (grey card)
+             LOG CONTAINER 
 ────────────────────────────────────── */
 .log{
   margin-top: 20px;           /* visible gap between borders */
@@ -90,8 +90,37 @@ button:active{
   width: 80%;
 }
 
+.delete-btn{
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;      /* smaller icon */
+  width: 1.6em;
+  height: 1.6em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 6px;       /* tiny gap from text */
+  color: red;
+  line-height: 1;         /* remove extra vertical space */
+
+}
+
+.delete-btn:hover:enabled{
+  background-color: #7f7f7f;
+}
+
+.delete-btn:active:enabled{
+  background-color: white;
+  transform: none;
+  box-shadow: none;
+}
+
+
 /* ─────────────────────────────────────
-     SMALL‑PHONE RESPONSIVENESS 
+        SMALL‑PHONE RESPONSIVENESS 
 ────────────────────────────────────── */
 @media screen and (max-width: 480px){
   .outside,
@@ -101,5 +130,7 @@ button:active{
     font-size: 1.8rem;
     text-align: center;
   }
-  
+
 }
+
+
